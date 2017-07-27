@@ -2,6 +2,8 @@ module Controller exposing (update)
 
 import Model exposing (..)
 
+import TinParser exposing (parse)
+
 update : Msg -> Model -> (Model, Cmd Msg)
 update msg model =
   case msg of
@@ -14,7 +16,7 @@ update msg model =
         oldCode =
           model.code
         newOutput =
-          model.code
+          toString <| TinParser.parse model.code
       in
         ( { model
               | oldCode =
