@@ -1,2 +1,2 @@
 all:
-	elm-make Main.elm --warn --output=tin.js
+	elm-make src/Main.elm --warn --output=tin.js
